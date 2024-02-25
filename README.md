@@ -13,3 +13,5 @@
 - HTTP 메서드 활용 (실무 활용 예시)
 - HTTP 상태 코드
 - HTTP 헤더
+
+강의 출처: https://inf.run/8ZEU8
