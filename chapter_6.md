@@ -1,5 +1,6 @@
 # HTTP 상태 코드
 상태 코드: 클라이언트가 보낸 요청의 처리 상태를 응답에서 알려주는 기능을 한다
+
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/4368b4c0-830f-4cd3-b711-ac3e368ab30a)
 
 만약 모르는 상태 코드가 나타나면?
@@ -15,12 +16,15 @@
 ## 3XX 리다이렉션
 요청을 완료하기 위해 유저 에이전트의 추가 조치가 필요할 때
 리다이렉션이란 > 윕 브라우저는 3xx 응답의 결과에 location 헤더가 있으면, location 위치로 자동 이동하는 것 
+
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/21f4c87b-30b9-4fe6-9adb-f992754956ad)
+
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/e5f01e31-07db-4175-b7ff-34fd518ee966)
 영구 리다이렉션
 301, 308
 리소스의 URI가 영구적으로 이동
 원래의 URL 사용X, 검색 엔진 등에서도 변경 인지
+
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/f0ede02d-6f5b-4242-aea8-fbf38605f1c9)
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/6bb3a461-0ce5-4cf4-994f-8295bd0bbed7)
 
@@ -37,19 +41,24 @@ PRG: Post/Redirect/Get (일시적인 리다이렉션 - 예시)
 - POST로 주문후에 웹 브라우저를 새로고침하면?
 - 새로고침은 다시 요청(POST 재 요청이 발생할 수 있음)
 - 중복 주문이 될 수 있다
+  
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/a7fc9399-36bf-4896-b863-eea13628ff7b)
+
 예시로 마우스 1개를 주문한다고 치면, 클라이언트가 주문을 요청하면 POST로 서버에서 요청을 받아 처리한 후 결과 리턴
 이후 새로고침이 이루어질 경우 마지막 요청인 POST(주문요청)이 재 전송되면서 서버는 동일한 주문을 또 생성하게 됨
 (이런 이슈는 대부분 서버 측에서 별도의 처리 과정을 통해 막는다, 임시 주문번호/임시 상품번호 생성 등)
 
 이런 부분을 방지하기 위해 자동 리다이렉트를 통해 새로고침을 해도 GET으로 결과에 대한 요청만 이루어지도록 프로세스 설계
+
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/f876a98c-ad78-4ea6-af8b-caeb07ef8c5d)
+
 이전과 다르게 처음 주문 받은 후 서버에서 응답을 200 OK가 아닌 302 Found로 클라이언트로 전달(303도 된다)-> /order-result/19 에서는
 요청이 이루어질 경우 GET으로 요청하도록 처리 -> 새로고침을 통해 서버측으로 재 요청이 이루어져도 GET이기에 결과 중복 주문이 아닌 결과 화면만 재 호출됨
 
 PRG 이후 리다이렉트를 해도 URL이 이미 POST -> GET으로 리다이렉트 되었기 때문에 GET으로 결과 화면만 조회하게 되는 것
 
 **정리**
+
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/4a393884-b1db-49c7-a31b-2d7db1959cdd)
 
 기타 리다이렉션
