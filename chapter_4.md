@@ -44,7 +44,7 @@ URI는 리소스만 식별한다, 리소스와 해당 리소스를 대상으로 
 - 전달된 데이터로 주로 신규 리소스 등록, 프로세스 처리에 사용함
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/6c2e46fd-3e14-4291-90c9-a2e0b67cd2c8)
 전달할 데이터를 어떻게 사용할 것인지 미리 서버와 약속을 한다(새로 저장할거야, 프로세스를 바꿀꺼야...등)
-![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/e7197140-f7da-4fcf-a94d-b436d5823677)
+
 이후 POST를 통해 서버로 데이터를 전달한다
 ![image](https://github.com/SAMEZ-0129/HTTP_Web_Basic_Study/assets/81644075/e91f513d-8bfa-4f8a-afd4-c3cea39700ab)
 서버에서 응답을 처리한 후 클라이언트로 처리한 요청을 알려준다
